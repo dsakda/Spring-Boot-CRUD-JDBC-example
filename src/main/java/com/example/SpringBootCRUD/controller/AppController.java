@@ -1,4 +1,4 @@
-package com.example.SpringBootCRUD.Controller;
+package com.example.SpringBootCRUD.controller;
 
 import com.example.SpringBootCRUD.SaleDAO;
 import org.springframework.beans.factory.annotation.Autowired;
