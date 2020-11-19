@@ -1,6 +1,6 @@
-package com.example.SpringBootCRUD.controller;
+package com.example.controller;
 
-import com.example.SpringBootCRUD.SaleDAO;
+import com.example.dao.SaleDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
