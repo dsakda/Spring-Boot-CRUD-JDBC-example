@@ -4,6 +4,8 @@ import com.example.model.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +28,11 @@ public class SaleDAO {
     }
 
     public void save(Sale sale) {
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        insertActor.withTableName("SALES").usingColumns("ITEM", "QUANTITY", "AMOUNT");
+        BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(sale);
 
+        insertActor.execute(parameterSource);
     }
 
     public Sale get(int id) {
