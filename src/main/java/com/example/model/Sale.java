@@ -48,4 +48,14 @@ public class Sale {
     public void setAmount(float amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return "Sale{" +
+                "Id=" + Id +
+                ", item='" + item + '\'' +
+                ", quantity=" + quantity +
+                ", amount=" + amount +
+                '}';
+    }
 }
