@@ -16,8 +16,12 @@ import java.util.List;
 @Transactional
 public class SaleDAO {
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public SaleDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public List<Sale> list() {
         String sql = "SELECT * FROM SALES";
