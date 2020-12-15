@@ -16,8 +16,12 @@ import java.util.List;
 @Controller
 public class AppController {
 
-    @Autowired
     private SaleDAO dao;
+
+    @Autowired
+    public AppController(SaleDAO dao) {
+        this.dao = dao;
+    }
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
