@@ -16,13 +16,9 @@ import java.util.List;
 @Transactional
 public class SaleDAO {
 
-    private JdbcTemplate jdbcTemplate;
-
     @Autowired
-    public SaleDAO(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
+    private JdbcTemplate jdbcTemplate;
+    
     public List<Sale> list() {
         String sql = "SELECT * FROM SALES";
         List<Sale> listSale = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Sale.class));
