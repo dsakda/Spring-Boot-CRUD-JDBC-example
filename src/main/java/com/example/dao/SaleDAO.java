@@ -18,7 +18,7 @@ public class SaleDAO {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    
+
     public List<Sale> list() {
         String sql = "SELECT * FROM SALES";
         List<Sale> listSale = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Sale.class));
